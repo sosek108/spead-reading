@@ -17,3 +17,13 @@ Dependencies
 * Angular ui-router
 * Bootstrap
 * jQuery
+
+Functions
+=========
+
+Schulz' Tables
+--------------
+
+Random number generator
+-----------------------
+

@@ -1,12 +1,15 @@
 <h1>Tablice Schulza</h1>
 
 <input type="range" min="4" max="10" ng-model="schulz.size" ng-change="schulz.update(schulz.size)"/>{{schulz.size}}
-<table style="border: 1px solid black;">
-    <tr ng-repeat="i in [] | range:schulz.size">
-        <td style="border: 1px solid; width: 20px; height: 20px; margin: auto; text-align: center;" ng-repeat="j in []|range:schulz.size">{{ schulz.permuted[i*schulz.size + j] }}</td>
-    </tr>
-</table>
+<div class="row">
+    <div class="content col-md-6 col-md-offset-3">
+        <table >
+            <tr ng-repeat="i in [] | range:schulz.size">
+                <td ng-repeat="j in []|range:schulz.size">{{ schulz.permuted[i*schulz.size + j] }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 
-
-
+<!--TODO: click on each element animate its state (eg. colour)-->
