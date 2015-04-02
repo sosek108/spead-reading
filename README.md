@@ -13,7 +13,7 @@ Now it's simple but in time I'll add more functions.
 
 Dependencies
 ------------
-AngularJS
-Angular ui-router
-Bootstrap
-jQuery
+* AngularJS
+* Angular ui-router
+* Bootstrap
+* jQuery
