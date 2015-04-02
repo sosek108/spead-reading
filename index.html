@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="speedApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Spead reading tools</title>
+
+    <!--Third party scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+
+    <!--Third party CSSes-->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+
+    <script src="js/speed.js"></script>
+</head>
+<body >
+
+    <a ui-sref="schulz">Tablice Schulza</a>
+    <a ui-sref="generator">Liczby losowe</a>
+
+    <div ui-view></div>
+</body>
+</html>

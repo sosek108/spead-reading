@@ -1,0 +1,7 @@
+<h1>Generator liczb losowych</h1>
+
+<input type="range" min="4" max="10" ng-model="gen.length" ng-change="gen.update(gen.length)"/>{{gen.length}}<br/>
+<button class="btn btn-danger" ng-click="gen.generateRandom()">Generuj</button>
+<span ng-show="gen.showNumber">{{gen.number}}</span>
+<br/>
+        <button class="brn btn-info" ng-click="gen.showNumber = true">Pokaż odpowiedź</button>
