@@ -65,7 +65,10 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
         $scope.time = 500; //miliseconds
 
         $scope.generateRandom = function() {
-            $scope.number = Math.floor(Math.random()* Math.pow(10, $scope.length));
+            var rand = Math.random()
+            while (rand < 0.1)
+                rand = Math.random()
+            $scope.number = Math.floor(rand* Math.pow(10, $scope.length));
             $scope.showNumber = true;
             $timeout(function(){$scope.showNumber = false;}, $scope.time, true);
         };
