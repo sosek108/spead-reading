@@ -1,7 +1,7 @@
 /**
  * Created by sosek108 on 22.03.15.
  */
-angular.module("speedApp", ["ui.router"])
+angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
     .filter('range', function() {
         return function(input, total) {
             total = parseInt(total);
@@ -53,22 +53,28 @@ angular.module("speedApp", ["ui.router"])
 
         this.permuted = this.permute(this.size);
     })
-    .controller('GenCtrl', function($timeout) {
+    .controller('GenCtrl', function($timeout, $scope) {
         var gen = this;
 
         //Show answer?
-        this.number = "";
-        this.showNumber = false;
+        $scope.number = "";
+        $scope.showNumber = false;
 
         //settings
-        this.length = 6;
-        this.time = 500; //miliseconds
+        $scope.length = 6;
+        $scope.time = 500; //miliseconds
 
-        this.generateRandom = function() {
-            this.number = Math.floor(Math.random()* Math.pow(10, this.length));
-            this.showNumber = true;
-            $timeout(function(){gen.showNumber = false;}, this.time, true);
+        $scope.generateRandom = function() {
+            $scope.number = Math.floor(Math.random()* Math.pow(10, $scope.length));
+            $scope.showNumber = true;
+            $timeout(function(){$scope.showNumber = false;}, $scope.time, true);
         };
 
+        $scope.showAns = function() {
+            $scope.showNumber = true;
+        }
     })
+
+
+
 ;
