@@ -17,6 +17,7 @@ Dependencies
 * Angular ui-router
 * Bootstrap
 * jQuery
+* angular-hotkeys (https://github.com/chieffancypants/angular-hotkeys)
 
 Functions
 =========
