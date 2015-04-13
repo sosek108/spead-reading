@@ -11,6 +11,27 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
         };
     })
 
+    .factory('word', function() {
+        //This is API for getting words.
+        word = this;
+
+        word.getWord = function(numOfLetters) {
+            //TODO: make it connect with DB
+            var tempWords = {
+                1: ['a', 'b', 'c', 'd', 'e'],
+                2: ['ab', 'ba', 'cd', 'bo', 'on', 'ja', 'Ci'],
+                3: ['ona', 'ono', 'ten', 'org', 'dom', 'tip'],
+                //...
+            };
+            if (numOfLetters > 3)
+                numOfLetters = 3;
+            rand = Math.floor(Math.random()*tempWords[numOfLetters].length);
+            return tempWords[numOfLetters][rand];
+        };
+        return {
+            getWord: word.getWord
+        }
+    })
     .config(function($stateProvider) {
         $stateProvider
             .state('schulz', {
@@ -91,16 +112,25 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
         }
     })
 
-    .controller('WideCtrl', function($scope) {
-        $scope.width = 10;
+    .controller('WideCtrl', function($scope, word) {
+        $scope.numOfletters = 3 ; //TODO: implement settings
+        $scope.rows = 3;
+        $scope.width = 10   ;
+
         $scope.maxWidth = $(".wide-angle").innerWidth() - $(".prefix").outerWidth() - $(".suffix").outerWidth() - 1;
+
         $scope.setWidth = function(width) {
-            $(".center").width(width);
+            $(".center").width(width); //TODO: make it angular way
         };
         $scope.setWidth($scope.width);
-        console.log([$(".wide-angle").innerWidth(), $(".prefix").outerWidth(), $(".suffix").outerWidth()])
 
-        //TODO: Make it in Angular way!
+        $scope.leftWords = [];
+        $scope.rightWords = [];
+        for (var i = 0; i< $scope.rows; i++) {
+            $scope.leftWords.push(word.getWord($scope.numOfletters));
+            $scope.rightWords.push(word.getWord($scope.numOfletters));
+        }
+
     })
 
     .controller('WarmUpCtrl', function($scope) {

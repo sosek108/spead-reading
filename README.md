@@ -31,3 +31,9 @@ Random number generator
 Wide-angle vision
 -----------------
 
+Warm-up exercise
+----------------
+This exercise is for warming up your eyes before you can stard reading. It works like warm up before others trainings (eg. running).
+
+It uses basics of canvas animation. 
+

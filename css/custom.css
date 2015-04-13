@@ -20,8 +20,16 @@
     padding: 0;
 }
 .wide-angle .center, .wide-angle .prefix, .wide-angle .suffix {
-    margin:0;
-    padding: 0;
+    margin-left:0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.wide-angle .prefix {
+    text-align: right;
+}
+.wide-angle .suffix {
+    text-align: left;
 }
 
 .warmUpCanvas {

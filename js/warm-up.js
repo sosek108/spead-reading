@@ -1,6 +1,9 @@
 /**
  * Created by sosek108 on 13.04.15.
  */
+
+//TODO: Make it Angular Way
+//HOWTO: how to use Angular and Canvas together?
 $(document).ready(function() {
     var canvas = document.getElementById("warmUpCanvas");
     var context = canvas.getContext("2d");
