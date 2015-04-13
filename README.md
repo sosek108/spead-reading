@@ -28,3 +28,6 @@ Schulz' Tables
 Random number generator
 -----------------------
 
+Wide-angle vision
+-----------------
+

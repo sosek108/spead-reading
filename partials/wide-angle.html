@@ -1,0 +1,11 @@
+<h1>Widzenie szerokokątne</h1>
+<input type="range" min="10" max="{{maxWidth}}" ng-model="width" ng-change="setWidth(width)"/><br/>
+<div class="row wide-angle text-center">
+    <div class="col-md-1 prefix col-xs-1">
+        before
+    </div>
+    <div class="center text-center col-md-10 col-xs-10">{{width}}</div>
+    <div class="col-md-1 suffix col-xs-1">
+        after
+    </div>
+</div>

@@ -24,6 +24,16 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
                 templateUrl: 'partials/generator.html',
                 controller: 'GenCtrl as gen'
             })
+            .state('wide-angle', {
+                url: '/wide-angle',
+                templateUrl: 'partials/wide-angle.html',
+                controller: 'WideCtrl as wide'
+            })
+            .state('warm-up', {
+                url: '/warm-up',
+                templateUrl: 'partials/warm-up.html',
+                controller: 'WarmUpCtrl as warm'
+            })
     })
 
     .controller('SchulzCtrl', function() {
@@ -53,6 +63,7 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
 
         this.permuted = this.permute(this.size);
     })
+
     .controller('GenCtrl', function($timeout, $scope) {
         var gen = this;
 
@@ -80,6 +91,20 @@ angular.module("speedApp", ["ui.router", "cfp.hotkeys"])
         }
     })
 
+    .controller('WideCtrl', function($scope) {
+        $scope.width = 10;
+        $scope.maxWidth = $(".wide-angle").innerWidth() - $(".prefix").outerWidth() - $(".suffix").outerWidth() - 1;
+        $scope.setWidth = function(width) {
+            $(".center").width(width);
+        };
+        $scope.setWidth($scope.width);
+        console.log([$(".wide-angle").innerWidth(), $(".prefix").outerWidth(), $(".suffix").outerWidth()])
 
+        //TODO: Make it in Angular way!
+    })
 
+    .controller('WarmUpCtrl', function($scope) {
+        $scope.runAnimation = false;
+
+    })
 ;
