@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
 }
+
 .wide-angle .center, .wide-angle .prefix, .wide-angle .suffix {
     margin-left:0;
     margin-right: 0;
